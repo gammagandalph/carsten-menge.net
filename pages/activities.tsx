@@ -51,6 +51,14 @@ export default function Home() {
         Simple Conway&apos;s Game Of Life in JS (Source)
       </a>
       <br />
+      <a
+        href="https://github.com/gammagandalph/carsten-menge.net"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Diese Website (Source)
+      </a>
+      <br />
     </Navigation>
   );
 }
