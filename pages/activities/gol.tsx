@@ -5,7 +5,7 @@ export default function GoL() {
     <Navigation active="activities" title="Game of Life">
       <iframe
         className="h-screen w-full"
-        src="http://gol.eleflansch.de/"
+        src="https://gol.eleflansch.de/"
       ></iframe>
     </Navigation>
   );

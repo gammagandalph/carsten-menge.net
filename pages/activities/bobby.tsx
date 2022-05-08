@@ -5,7 +5,7 @@ export default function Bobby() {
     <Navigation active="activities" title="Bobby Car Racer">
       <iframe
         className="h-screen w-full"
-        src="http://racer.eleflansch.de/"
+        src="https://racer.eleflansch.de/"
       ></iframe>
     </Navigation>
   );

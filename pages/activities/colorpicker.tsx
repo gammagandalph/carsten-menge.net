@@ -5,7 +5,7 @@ export default function Coloricker() {
     <Navigation active="activities" title="Colorpicker">
       <iframe
         className="h-screen w-full"
-        src="http://colorpicker.eleflansch.de/"
+        src="https://colorpicker.eleflansch.de/"
       ></iframe>
     </Navigation>
   );

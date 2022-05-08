@@ -5,7 +5,7 @@ export default function Hopps() {
     <Navigation active="activities" title="Hopps">
       <iframe
         className="h-screen w-full"
-        src="http://hopps.eleflansch.de/"
+        src="https://hopps.eleflansch.de/"
       ></iframe>
     </Navigation>
   );
