@@ -30,8 +30,8 @@ class AccordionItem extends Component<
       <div>
         <button
           onClick={() => this.switchState()}
-          className={`w-full text-left transition hover:delay-100 rounded-lg m-1 text-2xl p-2 ${
-            this.state.active ? "text-slate-900" : "text-gray-300"
+          className={`rounded-lg w-full text-left m-0.5 transition hover:delay-100 text-2xl p-2 ${
+            this.state.active ? "text-slate-900 rounded-b-none mb-0" : "text-gray-300 "
           } ${
             this.state.active ? "bg-slate-400" : "bg-slate-900"
           } hover:bg-slate-400 hover:cursor-pointer`}
@@ -39,7 +39,7 @@ class AccordionItem extends Component<
           {this.props.item.title}
         </button>
         {this.state.active ? (
-          <p className="p-2">{this.props.item.content}</p>
+          <p className="shadow-lg mb-1 rounded-b-lg p-2">{this.props.item.content}</p>
         ) : (
           ""
         )}

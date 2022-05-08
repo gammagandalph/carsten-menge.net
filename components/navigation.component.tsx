@@ -9,9 +9,9 @@ export default function Navigation({ children, active, title }) {
   }
 
   return (
-    <div className="bg-gray-300 p-0 min-h-screen">
-      <div className="bg-slate-900">
-        <h1 className="text-gray-300 bg-slate-900 text-center text-4xl pt-4 pb-4">
+    <div className="bg-gray-300 p-0 min-h-screen ">
+      <div className="bg-slate-900 shadow-lg">
+        <h1 className="text-gray-300 bg-slate-900 text-center text-4xl pt-4 pb-4 ">
           Carsten Menge
         </h1>
         <div className="pt-3 pb-3.5">
