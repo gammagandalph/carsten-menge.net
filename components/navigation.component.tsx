@@ -1,60 +1,43 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../styles/Navigation.module.css";
 
 export default function Navigation({ children, active, title }) {
+  function linkStyle(activeSite: string) {
+    return `rounded-t-xl transition hover:delay-75 hover:text-slate-900 hover:bg-gray-300 hover:rounded-t-xl p-4 ${
+      active === activeSite ? "text-slate-900 bg-gray-300" : "text-gray-300 bg-slate-900"
+    }`;
+  }
+
   return (
-    <div>
-      <div className={styles.navigation}>
-        <h1 className={styles.siteTitle}>Carsten Menge</h1>
-        <Link href="/">
-          <a
-            className={`${styles.navLink} 
-              ${active === "home" ? styles.active : ""}`}
-          >
-            Home
-          </a>
-        </Link>
-        <Link href="/whoami">
-          <a
-            className={`${styles.navLink} 
-            ${active === "whoami" ? styles.active : ""}`}
-          >
-            Über mich
-          </a>
-        </Link>
-        <Link href="/cv">
-          <a
-            className={`${styles.navLink} 
-            ${active === "cv" ? styles.active : ""}`}
-          >
-            Lebenslauf
-          </a>
-        </Link>
-        <Link href="/activities">
-          <a
-            className={`${styles.navLink} 
-            ${active === "activities" ? styles.active : ""}`}
-          >
-            Was ich so treibe
-          </a>
-        </Link>
-        <Link href="/contact">
-          <a
-            style={{ float: "right" }}
-            className={`${styles.navLink} 
-              ${active === "contact" ? styles.active : ""}`}
-          >
-            Kontakt?
-          </a>
-        </Link>
-      </div>
-      <div className={styles.grid}>
-        <div className={styles.leftCol}>
-          <h3>{title}</h3>
+    <div className="bg-gray-300 p-0 min-h-screen">
+      <div className="bg-slate-900">
+        <h1 className="text-gray-300 bg-slate-900 text-center text-4xl pt-4 pb-4">
+          Carsten Menge
+        </h1>
+        <div className="pt-3 pb-3.5">
+          <Link href="/">
+            <a className={linkStyle("home")}>Home</a>
+          </Link>
+          <Link href="/whoami">
+            <a className={linkStyle("whoami")}>Über mich</a>
+          </Link>
+          <Link href="/cv">
+            <a className={linkStyle("cv")}>Lebenslauf</a>
+          </Link>
+          <Link href="/activities">
+            <a className={linkStyle("activities")}>Was ich so treibe</a>
+          </Link>
+          <Link href="/contact">
+            <a className={linkStyle("contact")}>Kontakt?</a>
+          </Link>
         </div>
-        <div className={styles.mainContent}>{children}</div>
-        <div className={styles.rightCol}>
+      </div>
+      <div className="grid grid-cols-10">
+        <div className="col-span-2 p-3">
+          <h3 className="first-letter:text-3xl font-medium text-slate-900 text-2xl">{title}</h3>
+        </div>
+        <div className="col-span-6 p-3">{children}</div>
+        <div className="col-span-2 text-center p-3">
           <div>
             <Image
               src="/ich.jpg"

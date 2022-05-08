@@ -1,5 +1,4 @@
 import { Component } from "react";
-import styles from "../styles/Accordion.module.css";
 
 type AccordionProps = { content: IAccordionContent };
 type AccordionItemState = { active: boolean };
@@ -7,7 +6,7 @@ type AccordionItemState = { active: boolean };
 export default class Accordion extends Component<AccordionProps> {
   render() {
     return (
-      <div className={`${styles.accordionContainer}`}>
+      <div className="">
         {this.props.content.items.map((item, index) => {
           return <AccordionItem item={item} key={index} />;
         })}
@@ -28,23 +27,19 @@ class AccordionItem extends Component<
   }
   render() {
     return (
-      <div className={`accordionItem`}>
-        <h4
+      <div>
+        <button
           onClick={() => this.switchState()}
-          className={`${styles.accordionItemTitle} ${
-            this.state.active ? styles.accordionItemTitleActive : ""
-          }`}
+          className={`w-full text-left transition hover:delay-100 rounded-lg m-1 text-2xl p-2 ${
+            this.state.active ? "text-slate-900" : "text-gray-300"
+          } ${
+            this.state.active ? "bg-slate-400" : "bg-slate-900"
+          } hover:bg-slate-400 hover:cursor-pointer`}
         >
           {this.props.item.title}
-        </h4>
+        </button>
         {this.state.active ? (
-          <p
-            className={`${styles.accordionItemContent} ${
-              this.state.active ? styles.accordionItemContentActive : ""
-            }`}
-          >
-            {this.props.item.content}
-          </p>
+          <p className="p-2">{this.props.item.content}</p>
         ) : (
           ""
         )}
