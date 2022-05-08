@@ -1,11 +1,11 @@
 import Navigation from "../../components/navigation.component";
 
-export default function Coloricker() {
+export default function GoL() {
   return (
-    <Navigation active="activities" title="Colorpicker">
+    <Navigation active="activities" title="Game of Life">
       <iframe
         className="h-screen w-full"
-        src="http://colorpicker.eleflansch.de/"
+        src="http://gol.eleflansch.de/"
       ></iframe>
     </Navigation>
   );
